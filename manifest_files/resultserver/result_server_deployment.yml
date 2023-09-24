@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: result-server-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: result-server
+  template:
+    metadata:
+      labels:
+        app: result-server
+    spec:
+      containers:
+      - name: result-container
+        image: muslumhanozturk/phonebook:result
+        ports:
+        - containerPort: 80
+        env:
+        - name: MYSQL_PASSWORD
+          value: Clarusway_1
+        - name: MYSQL_DATABASE
+          value: phonebook
+        - name: MYSQL_USER
+          value: clarus
+        - name: MYSQL_DATABASE_HOST
+          value: mysql-service #  mysql.default.svc.cluster.local
+        resources: {}
