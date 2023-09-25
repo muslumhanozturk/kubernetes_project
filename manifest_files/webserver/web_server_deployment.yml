@@ -19,11 +19,23 @@ spec:
         - containerPort: 80
         env:
         - name: MYSQL_PASSWORD
-          value: Clarusway_1
+          valueFrom:
+            secretKeyRef:
+              name: mysql-secret
+              key: MYSQL_PASSWORD        
         - name: MYSQL_DATABASE
-          value: phonebook
+          valueFrom:
+            configMapKeyRef:
+              name: servers-configmap
+              key: MYSQL_DATABASE
         - name: MYSQL_USER
-          value: clarus
+          valueFrom:
+            configMapKeyRef:
+              name: servers-configmap
+              key: MYSQL_USER
         - name: MYSQL_DATABASE_HOST
-          value: mysql-service #  mysql.default.svc.cluster.local
-        resources: {}
+          valueFrom:
+            configMapKeyRef:
+              name: servers-configmap
+              key: MYSQL_DATABASE_HOST
+

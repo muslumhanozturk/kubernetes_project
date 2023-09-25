@@ -5,4 +5,4 @@ metadata:
 data:
   MYSQL_DATABASE: phonebook
   MYSQL_USER: clarus
-  MYSQL_DATABASE_HOST: mysql-deploy
+  MYSQL_DATABASE_HOST: mysql-service
