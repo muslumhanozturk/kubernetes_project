@@ -4,5 +4,5 @@ metadata:
   name: servers-configmap
 data:
   MYSQL_DATABASE: phonebook
-  MYSQL_USER: clarus
+  MYSQL_USER: Clarus
   MYSQL_DATABASE_HOST: mysql-service
