@@ -8,7 +8,7 @@ spec:
   storageClassName: manual
   capacity:
     storage: 20Gi
-  persistentVolumeReclaimPolicy: Retain
+  persistentVolumeReclaimPolicy: Retain   # The mapping between persistentVolume and persistentVolumeClaim is always one to one. Even When you delete the claim, PersistentVolume still remains as we set persistentVolumeReclaimPolicy is set to Retain and It will not be reused by any other claims.
   accessModes:
   - ReadWriteOnce
   hostPath:
