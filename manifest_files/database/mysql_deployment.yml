@@ -7,7 +7,7 @@ spec:
   selector:
     matchLabels:
       app: mysql
-  template:
+  template:                   # strategy: type: Recreate   
     metadata:
       labels:
         app: mysql
